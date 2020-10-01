@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nashville Software School</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <p>Daily Journal</p>
+        </div>
+        <div class="header-text">
+            <p>Mario C's Journal</p>
+        </div>
+    </header>
+
+    <main id="container">
+        <div class="form-container">
+            <form action="#">
+                New entry
+                <label for="date">Today's Date:</label>
+                <input type="date" name="date" />
+                <label for="concepts">Concepts covered today:</label>
+                <input type="text" name="concepts">
+                <label for="journal-entry">Journal entry:</label>
+                <textarea name="journal-entry" rows="10"></textarea>
+                <input type="button" value="Record entry">
+            </form>
+        </div>
+        <ul class="past-entries">
+            <li class="old-entry">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi mollitia est perferendis in? Quo commodi repudiandae, quae nisi sed quasi!</p>
+                <input type="button" value="Edit">
+                <input type="button" value="Delete">
+            </li>
+            <li class="old-entry">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi mollitia est perferendis in? Quo commodi repudiandae, quae nisi sed quasi!</p>
+                <input type="button" value="Edit">
+                <input type="button" value="Delete">
+            </li>
+            <li class="old-entry">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi mollitia est perferendis in? Quo commodi repudiandae, quae nisi sed quasi!</p>
+                <input type="button" value="Edit">
+                <input type="button" value="Delete">
+            </li>
+            <li class="old-entry">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi mollitia est perferendis in? Quo commodi repudiandae, quae nisi sed quasi!</p>
+                <input type="button" value="Edit">
+                <input type="button" value="Delete">
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>Mario Campopiano &#169;</p> 
+        <a href="https://github.com/mcampopiano">Github account</a>
+    </footer>
+
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>
