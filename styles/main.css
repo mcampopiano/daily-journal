@@ -25,3 +25,10 @@ header {
 .header-text {
 	margin: auto;
 }
+
+main {
+	display: flex;
+}
+.form-container {
+	border: 3px solid black;
+}
