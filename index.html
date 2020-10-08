@@ -19,16 +19,23 @@
 
     <main id="container">
         <div class="form-container">
-            <form action="#">
-                New entry
-                <br>
-                <input type="date" name="date" />
-                <br>
-                <input type="text" name="concepts" placeholder="Concepts covered">
-                <br>
-                <textarea name="journal-entry" rows="10" placeholder="Journal entry"></textarea>
-                <br>
-                <input type="button" value="Record entry">
+            <h2>"Daily Journal</h2>
+            <form action="">
+               <fieldset>
+                   <label for="journalDate">Date of entry</label>
+                   <input type="date" name="journalDate" id="journalDate">
+                   <label for="conceptsCovered">Concepts covered</label>
+                   <input type="text" name="conceptsCovered" id="conceptsCovered">
+                   <input type="textarea" placeholder="Type entry here">
+                   <label for="moodSelector">Select your mood from the drop down</label>
+                   <select>Mood for the day
+                       <option>happy</option>
+                       <option>sad</option>
+                       <option>angry</option>
+                       <option>tired</option>
+                   </select>
+                   <input type="button" value="Submit entry">
+               </fieldset>
             </form>
         </div>
         <ul class="past-entries">
