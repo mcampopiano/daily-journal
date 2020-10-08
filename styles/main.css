@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import "list.css";
 
 /*Typography
 --------------------------------------------------------------*/
@@ -17,8 +18,13 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
-
+body {
+	background-color: #d1cb82;
+}
 header {
+	background-color: #0a2463;
+	border: 5px double black;
+	color: white;
 	display: flex;
 }
 
@@ -28,7 +34,19 @@ header {
 
 main {
 	display: flex;
+	justify-content: space-evenly;
 }
 .form-container {
 	border: 3px solid black;
+}
+
+
+footer {
+	display: flex;
+	justify-content: center;
+	margin-top: 100%;
+}
+
+p {
+	margin-right: 50px;
 }

@@ -1,0 +1,7 @@
+ul {
+    background-color: #9381ff;
+	border: 3px solid black;
+    list-style-type: none;
+    opacity: .7;
+	text-align: center;
+}
