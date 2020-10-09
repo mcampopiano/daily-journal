@@ -1,6 +1,4 @@
-import {useJournalEntries} from "./JournalDataProvider.js"
-console.log("Welcome to the main module")
 
-const entries = useJournalEntries()
+import { RenderJournalEntries } from "./JournalEntryList.js"
 
-console.log(entries)
+RenderJournalEntries()
