@@ -1,6 +1,9 @@
+// Creates an HTML rendering of the journal entry objects
+
 export const JournalEntryComponent = (entry) => {
-    return `<section id="entry--${entry.id}" class="journalEntry">
+    return `<li id="entry--${entry.id}" class="journalEntry">
+    <h2>${entry.concept}</h2>
         ${entry.entry}
-        ${entry.date}
-    </section>`
+       <p> ${entry.date} </p>
+    </li>`
 }

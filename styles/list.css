@@ -1,7 +1,12 @@
 ul {
     background-color: #9381ff;
-	border: 3px solid black;
+    border: 3px solid black;
     list-style-type: none;
     opacity: .7;
-	text-align: center;
+    text-align: center;
+    padding: 0;
+}
+
+.journalEntry {
+    border: 5px double black;
 }
