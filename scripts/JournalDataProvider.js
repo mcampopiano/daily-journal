@@ -33,7 +33,7 @@ export const getEntries = () => {
     return fetch("http://localhost:8088/entries")
         .then(response => response.json())
         .then(parsedEntries => {
-            console.log("parsed entries", parsedEntries)
+            // console.log("parsed entries", parsedEntries)
             journal = parsedEntries
         })
 }
@@ -47,5 +47,5 @@ export const saveJournalEntry = (newEntry) => {
         body: JSON.stringify(newEntry)
     })
     .then(getEntries)
-    .then(dispatchStateChangeEvent())
+    .then(dispatchStateChangeEvent)
 }
