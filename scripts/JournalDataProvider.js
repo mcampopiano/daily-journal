@@ -31,4 +31,3 @@ export const getEntries = () => {
     })
 }
 
-console.log("journal", journal)
