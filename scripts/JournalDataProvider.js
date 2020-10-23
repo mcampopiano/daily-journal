@@ -7,6 +7,13 @@
  */
 
 // This is the original data.
+const eventHub = document.querySelector("#container")
+
+const dispatchStateChangeEvent = () => {
+    const entryStateChanged = new CustomEvent("journalStateChanged")
+    eventHub.dispatchEvent(entryStateChanged)
+}
+
 let journal = []
 
 /*
@@ -24,10 +31,21 @@ export const useJournalEntries = () => {
 // Now that the entries have been moved to the json api, I need to fetch them then put them in the journal array
 export const getEntries = () => {
     return fetch("http://localhost:8088/entries")
-    .then(response => response.json())
-    .then(parsedEntries => {
-        console.log("parsed entries", parsedEntries)
-        journal = parsedEntries
-    })
+        .then(response => response.json())
+        .then(parsedEntries => {
+            console.log("parsed entries", parsedEntries)
+            journal = parsedEntries
+        })
 }
 
+export const saveJournalEntry = (newEntry) => {
+    return fetch("http://localhost:8088/entries", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newEntry)
+    })
+    .then(getEntries)
+    .then(dispatchStateChangeEvent())
+}

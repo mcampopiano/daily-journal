@@ -37,9 +37,9 @@ main {
 	display: flex;
 	justify-content: space-evenly;
 }
-.form-container {
+/* .form-container {
 	border: 3px solid black;
-}
+} */
 
 
 footer {

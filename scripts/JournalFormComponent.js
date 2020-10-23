@@ -1,4 +1,6 @@
+import {saveJournalEntry} from "./JournalDataProvider.js"
 const contentContainer = document.querySelector(".form-container")
+const eventHub = document.querySelector("#container")
 
 const render = () => {
     contentContainer.innerHTML = `
@@ -6,16 +8,18 @@ const render = () => {
     <input id="form--date" type="date" />
     <input id="form--concept" type="text" placeholder="concept" />
     <textarea id="form--entry" placeholder="Type entry here"></textarea>
-    <select id="form--moodSelect">Current mood
+    <select id="form--moodSelect">
     <option >Select current mood</option>
-    <option id="mood--happy">happy</option>
-    <option id="mood--sad">sad</option>
-    <option id="mood--angry">angry</option>
-    <option id="mood--tired">tired</option>
-    <option id="mood--disappointed">disappointed</option>
-    <option id="mood--frustrated">frustrated</option>
-    <option id="mood--overwhelmed">overwhelmed</option>
-    <option id="mood--confident">confident</option>
+    <option class="mood">happy</option>
+    <option class="mood">sad</option>
+    <option class="mood">angry</option>
+    <option class="mood">tired</option>
+    <option class="mood">disappointed</option>
+    <option class="mood">frustrated</option>
+    <option class="mood">overwhelmed</option>
+    <option class="mood">confident</option>
+    </select>
+    <button id="saveEntry">Save</button>
     </section>
     `
 }
@@ -25,27 +29,22 @@ export const EntryForm = () => {
 }
 
 
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "saveEntry") {
+        console.log("I was clicked!")
+        const date = document.querySelector("#form--date").value
+        const concept = document.querySelector("#form--concept").value
+        const entry = document.querySelector("#form--entry").value
+        const mood = document.querySelector("#form--moodSelect").value
+        console.log("mood value", mood)
 
-
-
-
-
-// **************************FORM AS HARDCODED IN HTML****************************************
-// <form action="">
-            //    <fieldset>
-            //        <label for="journalDate">Date of entry</label>
-            //        <input type="date" name="journalDate" id="journalDate">
-            //        <label for="conceptsCovered">Concepts covered</label>
-            //        <input type="text" name="conceptsCovered" id="conceptsCovered">
-            //        <input type="textarea" placeholder="Type entry here">
-            //        <label for="moodSelector">Select your mood from the drop down</label>
-            //        <select>Current mood
-            //            <option>happy</option>
-            //            <option>sad</option>
-            //            <option>angry</option>
-            //            <option>tired</option>
-            //        </select>
-            //        <input type="button" value="Submit entry">
-            //    </fieldset>
-//             </form>
-// ********************************************************************************************
+        const newEntry = {
+            concept: concept,
+            entry: entry,
+            mood: mood,
+            date: date
+        } 
+        console.log("new object", newEntry)
+        saveJournalEntry(newEntry)
+    }
+})
