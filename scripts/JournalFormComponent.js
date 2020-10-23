@@ -36,7 +36,7 @@ eventHub.addEventListener("click", clickEvent => {
         const concept = document.querySelector("#form--concept").value
         const entry = document.querySelector("#form--entry").value
         const mood = document.querySelector("#form--moodSelect").value
-        console.log("mood value", mood)
+        // console.log("mood value", mood)
 
         const newEntry = {
             concept: concept,
@@ -44,7 +44,7 @@ eventHub.addEventListener("click", clickEvent => {
             mood: mood,
             date: date
         } 
-        console.log("new object", newEntry)
+        // console.log("new object", newEntry)
         saveJournalEntry(newEntry)
     }
 })

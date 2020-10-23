@@ -13,10 +13,10 @@ export const RenderJournalEntries = () => {
   .then(() => {
     let entryString = ''
     const collection = useJournalEntries()
-    console.log("collection ", collection)
+    // console.log("collection ", collection)
     for (const entry of collection) {
       entryString += JournalEntryComponent(entry)
   }
-  entryContainer.innerHTML += entryString
+  entryContainer.innerHTML = `<h2>Previous entries:</h2> ${entryString}`
   })
 }
