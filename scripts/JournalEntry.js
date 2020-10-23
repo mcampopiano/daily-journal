@@ -3,7 +3,8 @@
 export const JournalEntryComponent = (entry) => {
     return `<div class="journalEntry">
     <h2>${entry.concept}</h2>
+        <p> ${entry.date} </p>
         <p>${entry.entry}</p>
-       <p> ${entry.date} </p>
+        <p>Mood at time of entry: ${entry.mood}</p>
     </div>`
 }
