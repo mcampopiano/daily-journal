@@ -7,30 +7,7 @@
  */
 
 // This is the original data.
-const journal = [
-    {
-        id: 1,
-        date: "07/24/2025",
-        concept: "HTML & CSS",
-        entry: "We talked about HTML components and how to make grid layouts with Flexbox in CSS.",
-        mood: "Ok"
-    }, 
-    {
-        id: 2,
-        date: "09/28/2020",
-        concept: "Terminal",
-        entry: "Today I learned about using an alias to declare a variable for the terminal, and echo to create a string.",
-        mood: "Ok"
-    },
-    
-    {
-        id: 3,
-        date: "10/2/20",
-        concept: "github",
-        entry: "Started first group project. Learned how to push to github, approve and then pull each other's work.",
-        mood: "Ok"
-    }
-]
+let journal = []
 
 /*
     You export a function that provides a version of the
@@ -43,3 +20,15 @@ export const useJournalEntries = () => {
     )
     return sortedByDate
 }
+
+// Now that the entries have been moved to the json api, I need to fetch them then put them in the journal array
+export const getEntries = () => {
+    return fetch("http://localhost:8088/entries")
+    .then(response => response.json())
+    .then(parsedEntries => {
+        console.log("parsed entries", parsedEntries)
+        journal = parsedEntries
+    })
+}
+
+console.log("journal", journal)

@@ -1,4 +1,10 @@
 
+import { getEntries, useJournalEntries } from "./JournalDataProvider.js"
 import { RenderJournalEntries } from "./JournalEntryList.js"
 
-RenderJournalEntries()
+
+
+getEntries()
+.then(() => {
+    RenderJournalEntries()
+})
