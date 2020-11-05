@@ -6,8 +6,3 @@ import { getMoods, useMoods } from "./MoodDataProvider.js"
 
 RenderJournalEntries()
 EntryForm()
-
-getMoods()
-.then(() => {
-    console.log("moods:", useMoods())
-})

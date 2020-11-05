@@ -1,23 +1,19 @@
 import {saveJournalEntry} from "./JournalDataProvider.js"
+import { getMoods, useMoods } from "./MoodDataProvider.js"
 const contentContainer = document.querySelector(".form-container")
 const eventHub = document.querySelector("#container")
 
-const render = () => {
+const render = (moodArr) => {
     contentContainer.innerHTML = `
     <section class="form">
     <input id="form--date" type="date" />
     <input id="form--concept" type="text" placeholder="concept" />
     <textarea id="form--entry" placeholder="Type entry here"></textarea>
     <select id="form--moodSelect">
-    <option >Select current mood</option>
-    <option class="mood">happy</option>
-    <option class="mood">sad</option>
-    <option class="mood">angry</option>
-    <option class="mood">tired</option>
-    <option class="mood">encouraged</option>
-    <option class="mood">hopeful</option>
-    <option class="mood">overwhelmed</option>
-    <option class="mood">confident</option>
+    <option value="0">Select current mood</option>
+    ${moodArr.map(mood => {
+        return `<option value="${mood.id}">${mood.label}</option>`
+    }).join("")}
     </select>
     <button id="saveEntry">Save</button>
     </section>
@@ -25,24 +21,27 @@ const render = () => {
 }
 
 export const EntryForm = () => {
-    render()
+    getMoods()
+    .then(() => {
+
+        render(useMoods())
+    })
 }
 
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveEntry") {
-        console.log("I was clicked!")
         const date = document.querySelector("#form--date").value
         const concept = document.querySelector("#form--concept").value
         const entry = document.querySelector("#form--entry").value
-        const mood = document.querySelector("#form--moodSelect").value
+        const moodId = document.querySelector("#form--moodSelect").value
         // console.log("mood value", mood)
 
         const newEntry = {
-            concept: concept,
-            entry: entry,
-            mood: mood,
-            date: date
+            concept,
+            entry,
+            moodId,
+            date,
         } 
         // console.log("new object", newEntry)
         saveJournalEntry(newEntry)

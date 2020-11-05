@@ -20,9 +20,15 @@
       "moodId": 1,
       "date": "2020-10-23",
       "id": 4
+    },
+    {
+      "concept": "Normalization",
+      "entry": "Learned how to normalize our json-servers",
+      "moodId": "8",
+      "date": "2020-11-05",
+      "id": 5
     }
   ],
-
   "moods": [
     {
       "id": 1,
