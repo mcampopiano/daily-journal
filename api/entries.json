@@ -5,21 +5,56 @@
       "date": "09/28/2020",
       "concept": "Terminal",
       "entry": "Today I learned about using an alias to declare a variable for the terminal, and echo to create a string.",
-      "mood": "tired"
+      "moodId": 4
     },
     {
       "id": 3,
       "date": "10/2/20",
       "concept": "github",
       "entry": "Started first group project. Learned how to push to github, approve and then pull each other's work.",
-      "mood": "tired"
+      "moodId": 4
     },
     {
       "concept": "API",
       "entry": "Practiced adding objects to an API and then having them automatically load to the DOM on the push of a button. It took most of the day but I'm proud of the work I did.",
-      "mood": "happy",
+      "moodId": 1,
       "date": "2020-10-23",
       "id": 4
+    }
+  ],
+
+  "moods": [
+    {
+      "id": 1,
+      "label": "happy"
+    },
+    {
+      "id": 2,
+      "label": "sad"
+    },
+    {
+      "id": 3,
+      "label": "angry"
+    },
+    {
+      "id": 4,
+      "label": "tired"
+    },
+    {
+      "id": 5,
+      "label": "encouraged"
+    },
+    {
+      "id": 6,
+      "label": "hopeful"
+    },
+    {
+      "id": 7,
+      "label": "overwhelmed"
+    },
+    {
+      "id": 8,
+      "label": "confident"
     }
   ]
 }

@@ -14,8 +14,8 @@ const render = () => {
     <option class="mood">sad</option>
     <option class="mood">angry</option>
     <option class="mood">tired</option>
-    <option class="mood">disappointed</option>
-    <option class="mood">frustrated</option>
+    <option class="mood">encouraged</option>
+    <option class="mood">hopeful</option>
     <option class="mood">overwhelmed</option>
     <option class="mood">confident</option>
     </select>

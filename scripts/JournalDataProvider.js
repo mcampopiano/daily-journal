@@ -30,7 +30,7 @@ export const useJournalEntries = () => {
 
 // Now that the entries have been moved to the json api, I need to fetch them then put them in the journal array
 export const getEntries = () => {
-    return fetch("http://localhost:8088/entries")
+    return fetch("http://localhost:8088/entries?_expand=mood")
         .then(response => response.json())
         .then(parsedEntries => {
             // console.log("parsed entries", parsedEntries)
