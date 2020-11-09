@@ -1,4 +1,4 @@
-import {getEntries, useJournalEntries} from "./JournalDataProvider.js"
+import {deleteEntry, getEntries, useJournalEntries} from "./JournalDataProvider.js"
 import {JournalEntryComponent} from "./JournalEntry.js"
 
 const entryContainer = document.querySelector(".past-entries")
@@ -20,3 +20,11 @@ export const RenderJournalEntries = () => {
   entryContainer.innerHTML = `<h2>Previous entries:</h2> ${entryString}`
   })
 }
+
+eventHub.addEventListener("click", event => {
+  if (event.target.id.startsWith("deleteEntry--")) {
+    const [prefix, id] = event.target.id.split("--")
+    deleteEntry(id)
+    .then(RenderJournalEntries)
+  }
+})
