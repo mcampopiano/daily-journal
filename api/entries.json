@@ -34,6 +34,13 @@
       "moodId": "6",
       "date": "2020-11-09",
       "id": 6
+    },
+    {
+      "concept": "Filtering many to many relationships",
+      "entry": "Learned how to work with many to many relationships",
+      "moodId": "5",
+      "date": "2020-11-11",
+      "id": 7
     }
   ],
   "moods": [
