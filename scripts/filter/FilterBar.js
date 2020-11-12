@@ -5,9 +5,8 @@ const contentContainer = document.querySelector(".filters")
 export const FilterBar = () => {
     const render = () => {
         getMoods().then(() => {
-            const moods = useMoods()
             contentContainer.innerHTML = `
-            ${MoodFilter(moods)}
+            ${MoodFilter()}
             `
         })
     }

@@ -1,10 +1,11 @@
-import {getMoods, useMoods} from "../MoodDataProvider.js"
+import {useMoods} from "../MoodDataProvider.js"
+
+const eventHub = document.querySelector("#container")
 
 
 
-export const MoodFilter = (moods) => {
-    // getMoods().then(() => {
-        // const moods  = useMoods()
+export const MoodFilter = () => {
+        const moods  = useMoods()
         console.log("moods: ", moods)
         return `
         <fieldset class="fieldset">
@@ -18,5 +19,15 @@ export const MoodFilter = (moods) => {
             }
         </fieldset>
         `
-    // })
 }
+
+eventHub.addEventListener("change", event => {
+    if (event.target.name === "moodFilter") {
+        const filterChosen = new CustomEvent("moodChosen", {
+            detail: {
+                moodId: parseInt(event.target.value)
+            }
+        })
+        eventHub.dispatchEvent(filterChosen)
+    }
+})
